@@ -1,3 +1,4 @@
+import 'package:app_flutter/example/day110/pages/DetailPage.dart';
 import 'package:app_flutter/example/day110/pages/HomePage.dart';
 import 'package:app_flutter/example/day110/pages/InfoPage.dart';
 import 'package:app_flutter/example/day110/pages/MainPage.dart';
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget{
         "/" : (context) => MainPage(),
         "/home" : (context) => HomePage(),
         "/info" : (context) => Infopage(),
-        "/setting" : (context) => SettingPage()
+        "/setting" : (context) => SettingPage(),
+        "/detail" : (context) => DetailPage(),
       },
     ); // MaterialApp end
   } // build end
