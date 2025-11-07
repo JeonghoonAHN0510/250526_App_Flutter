@@ -25,6 +25,6 @@ class MyApp extends StatelessWidget{
         "/setting" : (context) => SettingPage(),
         "/detail" : (context) => DetailPage(),
       },
-    ); // MaterialApp end
+    );
   } // build end
 } // class end
