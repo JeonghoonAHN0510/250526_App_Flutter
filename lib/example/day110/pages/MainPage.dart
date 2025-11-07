@@ -1,5 +1,6 @@
 import 'package:app_flutter/example/day110/pages/HomePage.dart';
 import 'package:app_flutter/example/day110/pages/InfoPage.dart';
+import 'package:app_flutter/example/day110/pages/SettingPage.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget{
@@ -14,6 +15,7 @@ class MainPageState extends State<MainPage>{
   dynamic pages = [             // == List<Widget>
     HomePage(),                 // index 0 == 홈페이지
     Infopage(),                 // index 1 == 정보페이지
+    SettingPage(),              // index 2 == 설정페이지
   ];
 
   @override
@@ -37,6 +39,10 @@ class MainPageState extends State<MainPage>{
           BottomNavigationBarItem(
             icon: Icon(Icons.info, size: 30),
             label: "정보"
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings, size: 30, color: Colors.pink),
+            label: "설정"
           )
         ] // items end
       ),

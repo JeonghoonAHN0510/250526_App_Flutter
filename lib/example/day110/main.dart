@@ -1,6 +1,7 @@
 import 'package:app_flutter/example/day110/pages/HomePage.dart';
 import 'package:app_flutter/example/day110/pages/InfoPage.dart';
 import 'package:app_flutter/example/day110/pages/MainPage.dart';
+import 'package:app_flutter/example/day110/pages/SettingPage.dart';
 import 'package:flutter/material.dart';
 
 void main(){        // Flutter 프로그램 실행 시작점
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget{
       routes: {             // 경로와 해당 위젯을 연결하는 Map 구조
         "/" : (context) => MainPage(),
         "/home" : (context) => HomePage(),
-        "/info" : (context) => Infopage()
+        "/info" : (context) => Infopage(),
+        "/setting" : (context) => SettingPage()
       },
     ); // MaterialApp end
   } // build end
