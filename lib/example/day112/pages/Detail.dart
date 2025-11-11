@@ -41,7 +41,22 @@ class DetailState extends State<Detail>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("TODO 상세페이지"),),
-      body: Text("상세"),
+      body: Padding(
+        // padding: EdgeInsets.fromLTRB(left, top, right, bottom),
+        padding: EdgeInsets.fromLTRB(30, 30, 30, 40),
+        child: Column(   // 세로형 위젯
+          crossAxisAlignment: CrossAxisAlignment.start, // 좌측 정렬
+          children: [
+            Text("제목 : ${todo['title']}", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+            SizedBox(height: 10),
+            Text("내용 : ${todo['content']}", style: TextStyle(fontSize: 18, color: Colors.pink)),
+            SizedBox(height: 20),
+            Text("완료 여부 : ${todo['done'] == true ? '완료' : '미완료'}", style: TextStyle(fontSize: 18)),
+            SizedBox(height: 20),
+            Text("등록일 : ${todo['createDate']}", style: TextStyle(fontSize: 18))
+          ],
+        ),
+      )
     );
   } // build end
 } // class end
