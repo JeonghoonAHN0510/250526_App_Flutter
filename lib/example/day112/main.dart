@@ -2,6 +2,7 @@
 
 import 'package:app_flutter/example/day112/pages/Detail.dart';
 import 'package:app_flutter/example/day112/pages/Home.dart';
+import 'package:app_flutter/example/day112/pages/Update.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget{
       routes: {
         // "경로" : (context) => 위젯명(),
         "/" : (context) => Home(),
-        "/detail" : (context) => Detail()
+        "/detail" : (context) => Detail(),
+        "/update" : (context) => Update()
       },
     );
   } // build end

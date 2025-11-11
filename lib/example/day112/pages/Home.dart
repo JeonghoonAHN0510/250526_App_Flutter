@@ -61,7 +61,7 @@ class HomeState extends State<Home>{
                         mainAxisSize: MainAxisSize.min,   // Row 배치에서 위젯들의 넓이를 자동으로 최소 크키로 할당
                         children: [
                           IconButton(onPressed: (){deleteById(todo['id']);}, icon: Icon(Icons.delete_forever)),
-                          IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
+                          IconButton(onPressed: (){Navigator.pushNamed(context, "/update", arguments: todo['id']);}, icon: Icon(Icons.edit)),
                           // 위젯 간 이동 + 매개변수 전달 : Navigator.pushNamed(context, "이동경로", arguments: 매개변수);
                           IconButton(onPressed: (){Navigator.pushNamed(context, "/detail", arguments: todo['id']);}, icon: Icon(Icons.info)),
                         ],
