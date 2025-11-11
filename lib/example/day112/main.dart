@@ -1,5 +1,6 @@
 // React에서의 Router 역할
 
+import 'package:app_flutter/example/day112/pages/Detail.dart';
 import 'package:app_flutter/example/day112/pages/Home.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget{
       initialRoute: "/",
       routes: {
         // "경로" : (context) => 위젯명(),
-        "/" : (context) => Home()
+        "/" : (context) => Home(),
+        "/detail" : (context) => Detail()
       },
     );
   } // build end

@@ -17,7 +17,6 @@ class HomeState extends State<Home>{
     try {
       final response = await dio.get("http://192.168.40.190:8080/api/todo");
       final data = await response.data;
-      print(data);
       setState(() {
         todoList = data;
       });
@@ -25,7 +24,7 @@ class HomeState extends State<Home>{
       print(error);
     } // try-catch end
   } // func end
-  // 3. 가져온 todo 목록
+  // 3. Spring 서버로부터 가져온 todo 목록
   List<dynamic> todoList = [];
   // 4. Spring 서버로부터 todo 개별 삭제
   void deleteById(int id) async {
@@ -58,6 +57,15 @@ class HomeState extends State<Home>{
                     return Card(child: ListTile(
                       title: Text(todo['title']),
                       subtitle: Text(todo['content']),
+                      trailing: Row(  // 가로형 위젯
+                        mainAxisSize: MainAxisSize.min,   // Row 배치에서 위젯들의 넓이를 자동으로 최소 크키로 할당
+                        children: [
+                          IconButton(onPressed: (){deleteById(todo['id']);}, icon: Icon(Icons.delete_forever)),
+                          IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
+                          // 위젯 간 이동 + 매개변수 전달 : Navigator.pushNamed(context, "이동경로", arguments: 매개변수);
+                          IconButton(onPressed: (){Navigator.pushNamed(context, "/detail", arguments: todo['id']);}, icon: Icon(Icons.info)),
+                        ],
+                      ),
                     ));
                   }).toList()
                 ,
